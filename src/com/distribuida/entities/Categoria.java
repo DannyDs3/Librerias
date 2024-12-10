@@ -5,7 +5,7 @@ public class Categoria {
 	private String categoria;
 	private String descripcion;
 	
-	public Categoria() {
+	public Categoria(int i, String string, String string2, String string3, String string4, String string5, String string6) {
 		
 	}
 
