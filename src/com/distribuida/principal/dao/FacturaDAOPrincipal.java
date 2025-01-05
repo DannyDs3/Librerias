@@ -12,6 +12,9 @@ import com.distribuida.entities.Factura;
 public class FacturaDAOPrincipal {
 	
 	public static void main(String[]args) {
+		
+		// Todo Auto-generated method stub
+		
 		ClassPathXmlApplicationContext context = new  ClassPathXmlApplicationContext("ApplicationContext.xml");
 		ClienteDAO clienteDAO = context.getBean("clienteDAOImpl",ClienteDAO.class);
 		FacturaDAO facturaDAO =  context.getBean("facturaDAOImpl",FacturaDAO.class);
@@ -26,10 +29,27 @@ public class FacturaDAOPrincipal {
 		factura.setTotal(116.32);
 		factura.setCliente(cliente);
 		
-		facturaDAO.add(factura);
+		//facturaDAO.add(factura);
+		 //up
+		Cliente cliente2 = clienteDAO.findOne(2);
+		Factura factura2 = new Factura ();
+		factura2.setIdFactura(86);
+		factura2.setNumfactura("Fac-0099");
+		factura2.setFecha(new Date());
+		factura2.setTotalNeto(100.3086);
+		factura2.setIva(15.3286);
+		factura2.setTotal(116.3286);
+		factura2.setCliente(cliente2);
 		
+		//facturaDAO.up(factura2);
+		//facturaDAO.del(86);
 		
+		//findOne
+		try {System.out.println(facturaDAO.findOne(86).toString());  } catch (Exception e) {e.printStackTrace();
+			
+		}
 		
+		//findALL
 		
 		facturaDAO.findall().forEach(item ->{
 			System.out.println(item.toString());
